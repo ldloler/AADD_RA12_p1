@@ -9,36 +9,31 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import com.ra12.projecte1.com_ra12_projecte1.model.Objecte;
+
 @Repository
 public class ObjecteRepository {
 
      @Autowired
     JdbcTemplate jdbcTemplate;
 
-    private static final class ObjectRowMapper implements RowMapper<Object> {
+    private static final class ObjecteRowMapper implements RowMapper<Objecte> {
 
         @Override
-        public Object mapRow(@SuppressWarnings("null") ResultSet rs, int rowNum) throws SQLException {
+        public Objecte mapRow(@SuppressWarnings("null") ResultSet rs, int rowNum) throws SQLException {
 
-            User user = new User();
-            user.setId(rs.getLong("id"));
-            user.setName(rs.getString("name"));
-            user.setDescription(rs.getString("description"));
-            user.setEmail(rs.getString("email"));
-            user.setPassword(rs.getString("password"));
-            user.setUltimAccess(rs.getTimestamp("ultimAcces"));
-            user.setDataCreated(rs.getTimestamp("dataCreated"));
-            user.setDataUpdated(rs.getTimestamp("dataUpdated"));
-            user.setImagePath(rs.getString("imagePath"));
+            Objecte objecte = new Objecte();
+            objecte.setId(rs.getLong("id"));
+            objecte.setImage_path(rs.getString("image_path"));
+            objecte.setUser(rs.getString("user"));
+            objecte.setDescription(rs.getString("description"));
+            objecte.setFav(rs.getBoolean("isfav"));
 
-            return user;
+            return objecte;
         }
 
     }
 
-    public List<Object> findAll() {
-        String sql = "SELECT * FROM objects";
-        return jdbcTemplate.query(sql, new ObjectRowMapper());
-    }
+    
 
 }
