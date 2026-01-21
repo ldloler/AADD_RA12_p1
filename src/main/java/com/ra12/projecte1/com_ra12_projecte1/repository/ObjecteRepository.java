@@ -14,7 +14,7 @@ import com.ra12.projecte1.com_ra12_projecte1.model.Objecte;
 @Repository
 public class ObjecteRepository {
 
-     @Autowired
+    @Autowired
     JdbcTemplate jdbcTemplate;
 
     private static final class ObjecteRowMapper implements RowMapper<Objecte> {
@@ -34,6 +34,18 @@ public class ObjecteRepository {
 
     }
 
-    
+    public List<Objecte> findAll() {
+        String sql = "SELECT * FROM objects";
+        return jdbcTemplate.query(sql, new ObjecteRowMapper());
+    }
+
+    public int save(Objecte objecte) {
+        String sql = "INSERT INTO db_trokka.objects (image_path, user, description, isfav) VALUES(?, ?, ?, ?)";
+
+        int numReg = jdbcTemplate.update(sql, objecte.getImage_path(), objecte.getUser(), objecte.getDescription(),
+                objecte.isFav());
+
+        return numReg;
+    }
 
 }
