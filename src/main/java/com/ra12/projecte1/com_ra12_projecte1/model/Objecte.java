@@ -5,16 +5,18 @@ public class Objecte {
     private String image_path;
     private String user;
     private String description;
+    private String aCanvi;
     private boolean isFav;
     
     public Objecte() {
     }
 
-    public Objecte(Long id, String image_path, String user, String description, boolean isFav) {
+    public Objecte(Long id, String image_path, String user, String description, String aCanvi, boolean isFav) {
         this.id = id;
         this.image_path = image_path;
         this.user = user;
         this.description = description;
+        this.aCanvi = aCanvi;
         this.isFav = isFav;
     }
 
@@ -56,5 +58,13 @@ public class Objecte {
 
     public void setFav(boolean isFav) {
         this.isFav = isFav;
+    }
+
+    public String getaCanvi() {
+        return aCanvi;
+    }
+
+    public void setaCanvi(String aCanvi) {
+        this.aCanvi = aCanvi;
     }
 }
