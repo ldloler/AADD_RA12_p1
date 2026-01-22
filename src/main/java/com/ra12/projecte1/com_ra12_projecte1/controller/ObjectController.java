@@ -26,7 +26,7 @@ public class ObjectController {
 
     @PostMapping("/objecte/{id}/image")
     public ResponseEntity<String> postImageObject(@PathVariable Long id, @RequestParam MultipartFile image) {
-        String uploaded = objectService.savingImage(image);
+        String uploaded = objectService.uploadingImage(id, image);
         if (uploaded == null || uploaded.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No s'ha pogut afegir a imatge a la base de dades");
         }
