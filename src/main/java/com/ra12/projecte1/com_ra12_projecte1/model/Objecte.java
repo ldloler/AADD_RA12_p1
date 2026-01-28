@@ -7,7 +7,7 @@ public class Objecte {
     private String titulo;
     private String image_path;
     private String user;
-    private String description;
+    private String descripcion;
     private String aCanvi;
     private boolean isFav;
     private Timestamp dataCreated;
@@ -25,7 +25,7 @@ public class Objecte {
         this.titulo = titulo;
         this.image_path = image_path;
         this.user = user;
-        this.description = description;
+        this.descripcion = description;
         this.aCanvi = aCanvi;
         this.isFav = isFav;
         this.dataCreated = dataCreated;
@@ -59,11 +59,11 @@ public class Objecte {
     }
 
     public String getDescription() {
-        return description;
+        return descripcion;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.descripcion = description;
     }
 
     public boolean isFav() {
