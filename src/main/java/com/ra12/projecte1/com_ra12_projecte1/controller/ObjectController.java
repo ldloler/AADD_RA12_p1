@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ra12.projecte1.com_ra12_projecte1.dto.ObjectRequest;
-import com.ra12.projecte1.com_ra12_projecte1.model.Objecte;
+import com.ra12.projecte1.com_ra12_projecte1.dto.ObjectResponse;
 import com.ra12.projecte1.com_ra12_projecte1.service.ObjectService;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -30,14 +30,14 @@ public class ObjectController {
     ObjectService objectService;
 
     @GetMapping("/objecte")
-    public ResponseEntity<List<Objecte>> getAllObjecte() {
-        List<Objecte> response = objectService.getAllObjectes();
+    public ResponseEntity<List<ObjectResponse>> getAllObjecte() {
+        List<ObjectResponse> response = objectService.getAllObjectes();
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
     
     @GetMapping("/objecte/{id}")
-    public ResponseEntity<Objecte> getAllObjecte(@PathVariable Long id) {
-        Objecte response = objectService.getObjecteByID(id);
+    public ResponseEntity<ObjectResponse> getAllObjecte(@PathVariable Long id) {
+        ObjectResponse response = objectService.getObjecteByID(id);
         if (response == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
@@ -75,7 +75,7 @@ public class ObjectController {
     }
 
     @PutMapping("/objecte/{id}")
-    public ResponseEntity<String> putObjecte(@PathVariable Long id, @RequestBody Objecte objecte) {
+    public ResponseEntity<String> putObjecte(@PathVariable Long id, @RequestBody ObjectRequest objecte) {
         int updated = objectService.updatingObjecte(id, objecte);
         if(updated == 0){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No s'ha pogut actualitzar l'objecte.");

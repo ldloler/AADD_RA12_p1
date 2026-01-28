@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.ra12.projecte1.com_ra12_projecte1.dto.ObjectRequest;
-import com.ra12.projecte1.com_ra12_projecte1.model.Objecte;
+import com.ra12.projecte1.com_ra12_projecte1.dto.ObjectResponse;
 
 @Repository
 public class ObjecteRepository {
@@ -18,12 +18,12 @@ public class ObjecteRepository {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    private static final class ObjecteRowMapper implements RowMapper<Objecte> {
+    private static final class ObjecteRowMapper implements RowMapper<ObjectResponse> {
 
         @Override
-        public Objecte mapRow(@SuppressWarnings("null") ResultSet rs, int rowNum) throws SQLException {
+        public ObjectResponse mapRow(@SuppressWarnings("null") ResultSet rs, int rowNum) throws SQLException {
 
-            Objecte objecte = new Objecte();
+            ObjectResponse objecte = new ObjectResponse();
             objecte.setId(rs.getLong("id"));
             objecte.setTitulo(rs.getString("titulo"));
             objecte.setImage_path(rs.getString("image_path"));
@@ -39,12 +39,12 @@ public class ObjecteRepository {
 
     }
 
-    public List<Objecte> findAll() {
+    public List<ObjectResponse> findAll() {
         String sql = "SELECT * FROM objecte";
         return jdbcTemplate.query(sql, new ObjecteRowMapper());
     }
     
-    public Objecte findObjecteById(Long id){
+    public ObjectResponse findObjecteById(Long id){
         String sql = "SELECT * FROM objecte WHERE id = ?";
         return jdbcTemplate.query(sql, new ObjecteRowMapper(), id).get(0);
     }
@@ -58,7 +58,7 @@ public class ObjecteRepository {
         return numReg;
     }
 
-    public int update(Long id, Objecte objecte){
+    public int update(Long id, ObjectRequest objecte){
         String sql = "UPDATE objecte SET image_path = ?, user = ?, description = ?, aCanvi = ?, isFav = ? WHERE id = ?";
         return jdbcTemplate.update(sql, objecte.getImage_path(), objecte.getUser(), objecte.getDescription(), objecte.getaCanvi(), objecte.isFav(), id);
     }

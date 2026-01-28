@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ra12.projecte1.com_ra12_projecte1.dto.ObjectRequest;
+import com.ra12.projecte1.com_ra12_projecte1.dto.ObjectResponse;
 import com.ra12.projecte1.com_ra12_projecte1.logs.ObjecteLogs;
-import com.ra12.projecte1.com_ra12_projecte1.model.Objecte;
 import com.ra12.projecte1.com_ra12_projecte1.repository.ObjecteRepository;
 
 @Service
@@ -25,12 +25,12 @@ public class ObjectService {
     @Autowired
     ObjecteLogs objecteLogs;
 
-    public List<Objecte> getAllObjectes() {
+    public List<ObjectResponse> getAllObjectes() {
         objecteLogs.info("S'han consultat tots els Objectes", "ObjectService", "getAllObjectes");
         return objecteRepository.findAll();
     }
 
-    public Objecte getObjecteByID(Long id) {
+    public ObjectResponse getObjecteByID(Long id) {
         if (objecteRepository.findObjecteById(id) == null) {
             objecteLogs.error("No s'ha pogut trobar l'objecte", "ObjectService", "getObjectByID");
             return null;
@@ -89,7 +89,7 @@ public class ObjectService {
         }
     }
 
-    public int updatingObjecte(Long id, Objecte objecte) {
+    public int updatingObjecte(Long id, ObjectRequest objecte) {
         if (objecteRepository.findObjecteById(id) == null) {
             objecteLogs.error("No s'ha pogut actualitzar l'usuari", "ObjectService", "updatingObjecte");
             return 0;
@@ -108,7 +108,7 @@ public class ObjectService {
     }
 
     public int deletingAll() {
-        List<Objecte> tots = objecteRepository.findAll();
+        List<ObjectResponse> tots = objecteRepository.findAll();
 
         if (tots == null || tots.isEmpty()) {
             objecteLogs.error("No s'ha trobat cap objecte en la Base de Dades", "ObjectService", "deletingAll");
@@ -119,7 +119,7 @@ public class ObjectService {
     }
 
     public String uploadingImage(Long id, MultipartFile image) {
-        Objecte objecte = objecteRepository.findObjecteById(id);
+        ObjectResponse objecte = objecteRepository.findObjecteById(id);
         int numReg = 0;
 
         if (objecte == null) {
