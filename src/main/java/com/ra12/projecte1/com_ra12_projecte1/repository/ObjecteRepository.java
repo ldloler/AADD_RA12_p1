@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import com.ra12.projecte1.com_ra12_projecte1.dto.ObjectRequest;
 import com.ra12.projecte1.com_ra12_projecte1.model.Objecte;
 
 @Repository
@@ -24,11 +25,14 @@ public class ObjecteRepository {
 
             Objecte objecte = new Objecte();
             objecte.setId(rs.getLong("id"));
+            objecte.setTitulo(rs.getString("titulo"));
             objecte.setImage_path(rs.getString("image_path"));
             objecte.setUser(rs.getString("user"));
             objecte.setDescription(rs.getString("description"));
             objecte.setaCanvi(rs.getString("aCanvi"));
             objecte.setFav(rs.getBoolean("isFav"));
+            objecte.setDataCreated(rs.getTimestamp("dataCreated"));
+            objecte.setDataUpdated(rs.getTimestamp("dataUpdated"));
 
             return objecte;
         }
@@ -36,19 +40,19 @@ public class ObjecteRepository {
     }
 
     public List<Objecte> findAll() {
-        String sql = "SELECT * FROM objects";
+        String sql = "SELECT * FROM objecte";
         return jdbcTemplate.query(sql, new ObjecteRowMapper());
     }
     
-    public Objecte findUserById(Long id){
+    public Objecte findObjecteById(Long id){
         String sql = "SELECT * FROM objecte WHERE id = ?";
         return jdbcTemplate.query(sql, new ObjecteRowMapper(), id).get(0);
     }
 
-    public int save(Objecte objecte) {
-        String sql = "INSERT INTO db_trokka.objects (image_path, user, description, aCanvi, isFav) VALUES(?, ?, ?, ?, ?)";
+    public int save(ObjectRequest objecte) {
+        String sql = "INSERT INTO db_trokka.objecte (titulo, image_path, user, description, aCanvi, isFav) VALUES(?, ?, ?, ?, ?, ?)";
 
-        int numReg = jdbcTemplate.update(sql, objecte.getImage_path(), objecte.getUser(), objecte.getaCanvi(), objecte.getDescription(),
+        int numReg = jdbcTemplate.update(sql, objecte.getTitulo(), objecte.getImage_path(), objecte.getUser(), objecte.getaCanvi(), objecte.getDescription(),
                 objecte.isFav());
 
         return numReg;
