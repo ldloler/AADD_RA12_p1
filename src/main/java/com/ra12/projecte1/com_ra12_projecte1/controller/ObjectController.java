@@ -50,7 +50,7 @@ public class ObjectController {
         if (created == 0) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("No s'ha pogut crear l'objecte");
         }
-        return ResponseEntity.status(HttpStatus.CREATED).body("S'ha creat l'objecte " + objecte.getTitulo() + " correctament.");
+        return ResponseEntity.status(HttpStatus.CREATED).body("S'ha creat l'objecte '" + objecte.getTitulo() + "' correctament.");
     }
 
     @PostMapping("/objecte/batch")
