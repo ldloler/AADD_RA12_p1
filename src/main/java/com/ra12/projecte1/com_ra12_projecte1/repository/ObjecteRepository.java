@@ -75,7 +75,7 @@ public class ObjecteRepository {
 
     public int uploadImage(Long id, String image_path){
         String sql = "UPDATE objecte SET image_path = ? WHERE id = ?";
-        return jdbcTemplate.update(sql, id, image_path);
+        return jdbcTemplate.update(sql, image_path, id);
     }
 
 }

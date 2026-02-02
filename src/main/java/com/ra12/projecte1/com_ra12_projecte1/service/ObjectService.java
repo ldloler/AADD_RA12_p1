@@ -143,7 +143,7 @@ public class ObjectService {
 
     public String savingImage(MultipartFile image) {
 
-        String path = "/private/imageObjecte";
+        String path = "/private/imageObjecte/";
 
         try {
             if (image == null || image.isEmpty()) {
