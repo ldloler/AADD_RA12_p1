@@ -94,8 +94,12 @@ public class ObjectService {
             objecteLogs.error("No s'ha pogut actualitzar l'usuari", "ObjectService", "updatingObjecte");
             return 0;
         }
+        int updated = objecteRepository.update(id, objecte);
+        if (updated == 0) {
+            objecteLogs.error("No s'ha actualitzat l'objecte correctament.", "ObjectService", "updatingObjecte");
+        }
         objecteLogs.info("S'ha actualitzat l'objecte correctament.", "ObjectService", "updatingObjecte");
-        return objecteRepository.update(id, objecte);
+        return updated;
     }
 
     public int deletingById(Long id) {
@@ -143,7 +147,7 @@ public class ObjectService {
 
     public String savingImage(MultipartFile image) {
 
-        String path = "/private/imageObjecte/";
+        String path = "private/imageObjecte/";
 
         try {
             if (image == null || image.isEmpty()) {

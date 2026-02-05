@@ -59,7 +59,7 @@ public class ObjecteRepository {
     }
 
     public int update(Long id, ObjectRequest objecte){
-        String sql = "UPDATE objecte SET image_path = ?, user = ?, descripcion = ?, aCanvi = ?, isFav = ? WHERE id = ?";
+        String sql = "UPDATE objecte SET user = ?, descripcion = ?, aCanvi = ?, isFav = ? WHERE id = ?";
         return jdbcTemplate.update(sql, objecte.getUser(), objecte.getDescription(), objecte.getaCanvi(), objecte.isFav(), id);
     }
 
