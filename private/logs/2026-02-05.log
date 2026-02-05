@@ -16,3 +16,16 @@
 [2026-02-05: 12:06:11] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
 [2026-02-05: 12:06:17] INFO - ObjectService - deletingById - S'ha pogut esborrar l'usuari correctament
 [2026-02-05: 12:06:23] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-02-05: 12:10:17] INFO - ObjectService - createObjecte - S'ha guardat l'objecte Ejemplo de título correctament.
+[2026-02-05: 12:10:19] INFO - ObjectService - createObjecte - S'ha guardat l'objecte Ejemplo de título correctament.
+[2026-02-05: 12:10:24] INFO - ObjectService - createObjecte - S'ha guardat l'objecte Ejemplo de título correctament.
+[2026-02-05: 12:10:57] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-02-05: 12:11:31] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-02-05: 12:11:42] INFO - ObjecteService - savingImage - S'ha guardat correctament la imatge en el path: private\imageObjecte\image_flechita1770289902012.png
+[2026-02-05: 12:11:45] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-02-05: 12:12:00] INFO - ObjectService - updatingObjecte - S'ha actualitzat l'objecte correctament.
+[2026-02-05: 12:12:05] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-02-05: 12:12:19] INFO - ObjectService - deletingById - S'ha pogut esborrar l'usuari correctament
+[2026-02-05: 12:12:22] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-02-05: 12:12:32] INFO - ObjectService - deletingAll - S'ha esborrat tots els objectes correctament.
+[2026-02-05: 12:12:37] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
