@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ObjecteLogs {
-    private final String logDirectory = "/private/logs";
+    private final String logDirectory = "private/logs/";
 
     public ObjecteLogs(){
         Path fileDir = Paths.get(logDirectory);

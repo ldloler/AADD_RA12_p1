@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS objecte;
 CREATE TABLE objecte(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(100) NOT NULL,
-    image_path VARCHAR(100) NOT NULL,
+    image_path VARCHAR(100),
     user VARCHAR(100) NOT NULL,
     descripcion VARCHAR(100) NOT NULL,
     aCanvi VARCHAR(100) NOT NULL,
