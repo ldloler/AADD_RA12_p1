@@ -28,7 +28,7 @@ public class ObjecteRepository {
             objecte.setTitulo(rs.getString("titulo"));
             objecte.setImage_path(rs.getString("image_path"));
             objecte.setUser(rs.getString("user"));
-            objecte.setDescription(rs.getString("description"));
+            objecte.setDescription(rs.getString("descripcion"));
             objecte.setaCanvi(rs.getString("aCanvi"));
             objecte.setFav(rs.getBoolean("isFav"));
             objecte.setDataCreated(rs.getTimestamp("dataCreated"));
@@ -50,17 +50,17 @@ public class ObjecteRepository {
     }
 
     public int save(ObjectRequest objecte) {
-        String sql = "INSERT INTO db_trokka.objecte (titulo, image_path, user, description, aCanvi, isFav) VALUES(?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO db_trokka.objecte (titulo, user, descripcion, aCanvi, isFav) VALUES(?, ?, ?, ?, ?)";
 
-        int numReg = jdbcTemplate.update(sql, objecte.getTitulo(), objecte.getImage_path(), objecte.getUser(), objecte.getaCanvi(), objecte.getDescription(),
+        int numReg = jdbcTemplate.update(sql, objecte.getTitulo(), objecte.getUser(), objecte.getaCanvi(), objecte.getDescription(),
                 objecte.isFav());
 
         return numReg;
     }
 
     public int update(Long id, ObjectRequest objecte){
-        String sql = "UPDATE objecte SET image_path = ?, user = ?, description = ?, aCanvi = ?, isFav = ? WHERE id = ?";
-        return jdbcTemplate.update(sql, objecte.getImage_path(), objecte.getUser(), objecte.getDescription(), objecte.getaCanvi(), objecte.isFav(), id);
+        String sql = "UPDATE objecte SET user = ?, descripcion = ?, aCanvi = ?, isFav = ? WHERE id = ?";
+        return jdbcTemplate.update(sql, objecte.getUser(), objecte.getDescription(), objecte.getaCanvi(), objecte.isFav(), id);
     }
 
     public int delete(Long id){
@@ -75,7 +75,7 @@ public class ObjecteRepository {
 
     public int uploadImage(Long id, String image_path){
         String sql = "UPDATE objecte SET image_path = ? WHERE id = ?";
-        return jdbcTemplate.update(sql, id, image_path);
+        return jdbcTemplate.update(sql, image_path, id);
     }
 
 }

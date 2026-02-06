@@ -2,7 +2,6 @@ package com.ra12.projecte1.com_ra12_projecte1.dto;
 
 public class ObjectRequest {
     private String titulo;
-    private String image_path;
     private String user;
     private String description;
     private String aCanvi;
@@ -14,7 +13,6 @@ public class ObjectRequest {
     public ObjectRequest(String titulo, String image_path, String user, String description, String aCanvi,
             boolean isFav) {
         this.titulo = titulo;
-        this.image_path = image_path;
         this.user = user;
         this.description = description;
         this.aCanvi = aCanvi;
@@ -27,14 +25,6 @@ public class ObjectRequest {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public String getImage_path() {
-        return image_path;
-    }
-
-    public void setImage_path(String image_path) {
-        this.image_path = image_path;
     }
 
     public String getUser() {
