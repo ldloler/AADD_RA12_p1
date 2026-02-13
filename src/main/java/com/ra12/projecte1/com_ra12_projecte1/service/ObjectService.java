@@ -39,6 +39,15 @@ public class ObjectService {
         return objecteRepository.findObjecteById(id);
     }
 
+    public List<ObjectResponse> getObjecteByUser(String user) {
+        if (objecteRepository.findObjecteByUser(user) == null) {
+            objecteLogs.error("No s'han trobat objectes d'aquest usuari", "ObjectService", "getObjectByUser");
+            return null;
+        }
+        objecteLogs.info("S'han trobat els objectes de l'usuari.", "ObjectService", "getObjectByUser");
+        return objecteRepository.findObjecteByUser(user);
+    }
+
     public int createObjecte(ObjectRequest objecte) {
         int isSaved = objecteRepository.save(objecte);
         if (isSaved == 0) {
