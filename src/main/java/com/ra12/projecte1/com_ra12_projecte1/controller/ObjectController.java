@@ -29,15 +29,24 @@ public class ObjectController {
     @Autowired
     ObjectService objectService;
 
-    @GetMapping("/objecte")
+    @GetMapping("/objecte/all")
     public ResponseEntity<List<ObjectResponse>> getAllObjecte() {
         List<ObjectResponse> response = objectService.getAllObjectes();
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
     
     @GetMapping("/objecte/{id}")
-    public ResponseEntity<ObjectResponse> getAllObjecte(@PathVariable Long id) {
+    public ResponseEntity<ObjectResponse> getObjecteById(@PathVariable Long id) {
         ObjectResponse response = objectService.getObjecteByID(id);
+        if (response == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @GetMapping("/objecte")
+    public ResponseEntity<List<ObjectResponse>> getObjecteByUser(@RequestParam String user) {
+        List<ObjectResponse> response = objectService.getObjecteByUser(user);
         if (response == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }

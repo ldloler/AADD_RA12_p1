@@ -49,6 +49,11 @@ public class ObjecteRepository {
         return jdbcTemplate.query(sql, new ObjecteRowMapper(), id).get(0);
     }
 
+    public List<ObjectResponse> findObjecteByUser(String user) {
+        String sql = "SELECT * FROM objecte WHERE user = ?";
+        return jdbcTemplate.query(sql, new ObjecteRowMapper(), user);
+    }
+
     public int save(ObjectRequest objecte) {
         String sql = "INSERT INTO db_trokka.objecte (titulo, user, descripcion, aCanvi, isFav) VALUES(?, ?, ?, ?, ?)";
 
