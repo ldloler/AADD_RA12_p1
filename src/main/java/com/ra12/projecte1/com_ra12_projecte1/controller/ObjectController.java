@@ -53,6 +53,16 @@ public class ObjectController {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
+    @GetMapping("trokka/favs")
+    public ResponseEntity<List<ObjectResponse>> getObjecteFav() {
+        List<ObjectResponse> finded = objectService.findAllObjectesFav();
+        if (finded == null || finded.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(finded);
+    }
+    
+
     @PostMapping("/objecte")
     public ResponseEntity<String> createObject(@RequestBody ObjectRequest objecte) {
         int created = objectService.createObjecte(objecte);

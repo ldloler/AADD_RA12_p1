@@ -48,6 +48,10 @@ public class ObjectService {
         return objecteRepository.findObjecteByUser(user);
     }
 
+    public List<ObjectResponse> findAllObjectesFav(){
+        return objecteRepository.findObjecteFav();
+    }
+
     public int createObjecte(ObjectRequest objecte) {
         int isSaved = objecteRepository.save(objecte);
         if (isSaved == 0) {
