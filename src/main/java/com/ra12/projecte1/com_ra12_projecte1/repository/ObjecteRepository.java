@@ -54,6 +54,11 @@ public class ObjecteRepository {
         return jdbcTemplate.query(sql, new ObjecteRowMapper(), user);
     }
 
+    public List<ObjectResponse> findObjecteFav(){
+        String sql = "SELECT * FROM objecte WHERE isFav = true";
+        return jdbcTemplate.query(sql, new ObjecteRowMapper());
+    }
+
     public int save(ObjectRequest objecte) {
         String sql = "INSERT INTO db_trokka.objecte (titulo, user, descripcion, aCanvi, isFav) VALUES(?, ?, ?, ?, ?)";
 
