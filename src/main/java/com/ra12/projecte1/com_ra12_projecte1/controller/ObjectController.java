@@ -53,7 +53,7 @@ public class ObjectController {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-    @GetMapping("trokka/favs")
+    @GetMapping("/trokka/favs")
     public ResponseEntity<List<ObjectResponse>> getObjecteFav() {
         List<ObjectResponse> finded = objectService.findAllObjectesFav();
         if (finded == null || finded.isEmpty()) {
