@@ -35,7 +35,7 @@ public class ObjectController {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
     
-    @GetMapping("/objecte/{id}")
+    @GetMapping("/objecte/id/{id}")
     public ResponseEntity<ObjectResponse> getObjecteById(@PathVariable Long id) {
         ObjectResponse response = objectService.getObjecteByID(id);
         if (response == null) {
