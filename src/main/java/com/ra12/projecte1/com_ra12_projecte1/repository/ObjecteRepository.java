@@ -55,14 +55,14 @@ public class ObjecteRepository {
     }
 
     public List<ObjectResponse> findObjecteFav(){
-        String sql = "SELECT * FROM objecte WHERE isFav = true";
+        String sql = "SELECT * FROM objecte WHERE isFav = 1";
         return jdbcTemplate.query(sql, new ObjecteRowMapper());
     }
 
     public int save(ObjectRequest objecte) {
         String sql = "INSERT INTO db_trokka.objecte (titulo, user, descripcion, aCanvi, isFav) VALUES(?, ?, ?, ?, ?)";
 
-        int numReg = jdbcTemplate.update(sql, objecte.getTitulo(), objecte.getUser(), objecte.getaCanvi(), objecte.getDescription(),
+        int numReg = jdbcTemplate.update(sql, objecte.getTitulo(), objecte.getUser(),  objecte.getDescription(), objecte.getaCanvi(),
                 objecte.isFav());
 
         return numReg;
