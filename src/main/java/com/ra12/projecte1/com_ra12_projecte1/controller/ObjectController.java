@@ -44,21 +44,16 @@ public class ObjectController {
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-    @GetMapping("/objecte")
-    public ResponseEntity<List<ObjectResponse>> getObjecteByUser(@RequestParam String user) {
-        List<ObjectResponse> response = objectService.getObjecteByUser(user);
-        if (response == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-        return ResponseEntity.status(HttpStatus.OK).body(response);
+    @GetMapping("/objecte/user/{user}")
+    public ResponseEntity<List<ObjectResponse>> getObjecteByUser(
+            @PathVariable String user) {
+        List<ObjectResponse> finded = objectService.getObjecteByUser(user);
+        return ResponseEntity.status(HttpStatus.OK).body(finded);
     }
 
     @GetMapping("/objecte/favs")
     public ResponseEntity<List<ObjectResponse>> getObjecteFav() {
         List<ObjectResponse> finded = objectService.findAllObjectesFav();
-        if (finded == null || finded.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-        }
         return ResponseEntity.status(HttpStatus.OK).body(finded);
     }
     
