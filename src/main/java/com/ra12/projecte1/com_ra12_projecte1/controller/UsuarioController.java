@@ -29,7 +29,7 @@ public class UsuarioController {
     UsuarioService usuarioService;
 
     @PostMapping("/usuario")
-    public ResponseEntity<String> postMethodName(@RequestBody UsuarioRequest usuario) {
+    public ResponseEntity<String> postUsers(@RequestBody UsuarioRequest usuario) {
         UsuarioResponse finded = usuarioService.getByName(usuario.getNom());
 
         if (finded != null) {
