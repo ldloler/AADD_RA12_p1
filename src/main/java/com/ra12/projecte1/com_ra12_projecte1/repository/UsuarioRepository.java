@@ -24,14 +24,15 @@ public class UsuarioRepository {
             UsuarioResponse usuario = new UsuarioResponse();
             usuario.setId(rs.getLong("id"));
             usuario.setNom(rs.getString("nombre"));
+            usuario.setEmail(rs.getString("email"));
             usuario.setContrasenya(rs.getString("contrasenya"));
             return usuario;
         }
     }
 
     public int save(UsuarioRequest user){
-        String sql = "INSERT INTO usuario (nombre, contrasenya) VALUES (?, ?)";
-        return jdbcTemplate.update(sql, user.getNom(), user.getContrasenya());
+        String sql = "INSERT INTO usuario (nombre, email, contrasenya) VALUES (?, ?, ?)";
+        return jdbcTemplate.update(sql, user.getNom(), user.getEmail(), user.getContrasenya());
     }
 
     public List<UsuarioResponse> findAll(){
