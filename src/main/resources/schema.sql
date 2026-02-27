@@ -24,6 +24,14 @@ CREATE TABLE usuario(
 DROP TABLE IF EXISTS favoritos;
 
 CREATE TABLE favoritos(
-    id_objecte FOREIGN KEY,
-    id_usuario FOREIGN KEY
+    id_objecte BIGINT NOT NULL,
+    id_usuario BIGINT NOT NULL,
+    
+    PRIMARY KEY (id_objecte, id_usuario),
+
+    FOREIGN KEY (id_objecte) REFERENCES objecte(id)
+        ON DELETE CASCADE,
+        
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id)
+        ON DELETE CASCADE
 );
