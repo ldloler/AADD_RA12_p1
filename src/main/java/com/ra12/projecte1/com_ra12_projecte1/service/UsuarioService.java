@@ -23,11 +23,19 @@ public class UsuarioService {
     }
 
     public UsuarioResponse getById(Long id){
-        return usuarioRepository.findById(id);
+        List<UsuarioResponse> finded =usuarioRepository.findById(id);
+        if (finded == null || finded.isEmpty()) {
+            return null;
+        }
+        return finded.get(0);
     }
 
     public UsuarioResponse getByName(String nombre){
-        return usuarioRepository.findByName(nombre);
+        List<UsuarioResponse> finded =usuarioRepository.findByName(nombre);
+        if (finded == null || finded.isEmpty()) {
+            return null;
+        }
+        return finded.get(0);
     }
 
     public int updateByName(String nombre_nuevo, String nombre_antiguo){
@@ -43,6 +51,10 @@ public class UsuarioService {
     }
 
     public UsuarioResponse getByUser(UsuarioRequest usuario){
-        return usuarioRepository.findByUser(usuario);
+        List<UsuarioResponse> finded =usuarioRepository.findByUser(usuario);
+        if (finded == null || finded.isEmpty()) {
+            return null;
+        }
+        return finded.get(0);
     }
 }
