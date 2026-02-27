@@ -55,7 +55,7 @@ public class ObjecteRepository {
     }
 
     public List<ObjectResponse> findObjecteFav(){
-        String sql = "SELECT * FROM objecte WHERE isFav = 1";
+        String sql = "SELECT * FROM objecte WHERE isFav = TRUE";
         return jdbcTemplate.query(sql, new ObjecteRowMapper());
     }
 
