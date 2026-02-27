@@ -32,7 +32,7 @@ public class UsuarioRepository {
 
     public int save(UsuarioRequest user){
         String sql = "INSERT INTO usuario (nombre, email, contrasenya) VALUES (?, ?, ?)";
-        return jdbcTemplate.update(sql, user.getNom(), user.getEmail(), user.getContrasenya());
+        return jdbcTemplate.update(sql, user.getNombre(), user.getEmail(), user.getContrasenya());
     }
 
     public List<UsuarioResponse> findAll(){
@@ -62,11 +62,11 @@ public class UsuarioRepository {
 
     public int deleteUser(UsuarioRequest usuario){
         String sql = "DELETE FROM usuario WHERE nombre = ? AND contrasenya = ?";
-        return jdbcTemplate.update(sql, usuario.getNom(), usuario.getContrasenya());
+        return jdbcTemplate.update(sql, usuario.getNombre(), usuario.getContrasenya());
     }
 
     public List<UsuarioResponse> findByUser(UsuarioRequest usuario){
         String sql = "SELECT * FROM usuario WHERE nombre = ? and contrasenya = ?";
-        return jdbcTemplate.query(sql, new UsuarioRowMapper(), usuario.getNom(), usuario.getContrasenya());
+        return jdbcTemplate.query(sql, new UsuarioRowMapper(), usuario.getNombre(), usuario.getContrasenya());
     }
 }
