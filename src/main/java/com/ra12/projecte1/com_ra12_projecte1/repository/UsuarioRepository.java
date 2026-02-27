@@ -40,14 +40,14 @@ public class UsuarioRepository {
         return jdbcTemplate.query(sql, new UsuarioRowMapper());
     }
 
-    public UsuarioResponse findById(Long id){
+    public List<UsuarioResponse> findById(Long id){
         String sql = "SELECT * FROM usuario WHERE id = ?";
-        return jdbcTemplate.query(sql, new UsuarioRowMapper(), id).get(0);
+        return jdbcTemplate.query(sql, new UsuarioRowMapper(), id);
     }
 
-    public UsuarioResponse findByName(String nombre){
+    public List<UsuarioResponse> findByName(String nombre){
         String sql = "SELECT * FROM usuario WHERE nombre = ?";
-        return jdbcTemplate.query(sql, new UsuarioRowMapper(), nombre).get(0);
+        return jdbcTemplate.query(sql, new UsuarioRowMapper(), nombre);
     }
 
     public int changeUserName(String nombre_nuevo, String nombre_antiguo){
@@ -65,8 +65,8 @@ public class UsuarioRepository {
         return jdbcTemplate.update(sql, usuario.getNom(), usuario.getContrasenya());
     }
 
-    public UsuarioResponse findByUser(UsuarioRequest usuario){
+    public List<UsuarioResponse> findByUser(UsuarioRequest usuario){
         String sql = "SELECT * FROM usuario WHERE nombre = ? and contrasenya = ?";
-        return jdbcTemplate.query(sql, new UsuarioRowMapper(), usuario.getNom(), usuario.getContrasenya()).get(0);
+        return jdbcTemplate.query(sql, new UsuarioRowMapper(), usuario.getNom(), usuario.getContrasenya());
     }
 }
