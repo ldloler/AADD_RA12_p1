@@ -1,0 +1,48 @@
+package com.ra12.projecte1.com_ra12_projecte1.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ra12.projecte1.com_ra12_projecte1.dto.UsuarioRequest;
+import com.ra12.projecte1.com_ra12_projecte1.dto.UsuarioResponse;
+import com.ra12.projecte1.com_ra12_projecte1.repository.UsuarioRepository;
+
+@Service
+public class UsuarioService {
+    @Autowired
+    UsuarioRepository usuarioRepository;
+
+    public int post(UsuarioRequest usuario){
+        return usuarioRepository.save(usuario);
+    }
+
+    public List<UsuarioResponse> getAll(){
+        return usuarioRepository.findAll();
+    }
+
+    public UsuarioResponse getById(Long id){
+        return usuarioRepository.findById(id);
+    }
+
+    public UsuarioResponse getByName(String nombre){
+        return usuarioRepository.findByName(nombre);
+    }
+
+    public int updateByName(String nombre_nuevo, String nombre_antiguo){
+        return usuarioRepository.changeUserName(nombre_nuevo, nombre_antiguo);
+    }
+
+    public int updateByPassword(String nombre, String contrasenya){
+        return usuarioRepository.changePassword(nombre, contrasenya);
+    }
+
+    public int delete(UsuarioRequest usuario){
+        return usuarioRepository.deleteUser(usuario);
+    }
+
+    public UsuarioResponse getByUser(UsuarioRequest usuario){
+        return usuarioRepository.findByUser(usuario);
+    }
+}
