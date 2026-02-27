@@ -1,0 +1,8 @@
+[2026-02-13: 18:46:19] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-02-13: 18:48:11] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-02-13: 18:48:22] INFO - ObjectService - createObjecte - S'ha guardat l'objecte Cadira correctament.
+[2026-02-13: 18:48:26] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-02-13: 18:56:57] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-02-13: 18:57:10] INFO - ObjectService - createObjecte - S'ha guardat l'objecte Cadira correctament.
+[2026-02-13: 18:57:12] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-02-13: 18:57:59] INFO - ObjectService - getObjectByUser - S'han trobat els objectes de l'usuari.
