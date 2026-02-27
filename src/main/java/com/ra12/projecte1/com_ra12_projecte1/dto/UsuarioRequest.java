@@ -1,25 +1,25 @@
 package com.ra12.projecte1.com_ra12_projecte1.dto;
 
 public class UsuarioRequest {
-    private String nom;
+    private String nombre;
     private String email;
     private String contrasenya;
     
     public UsuarioRequest() {
     }
 
-    public UsuarioRequest(String nom, String email, String contrasenya) {
-        this.nom = nom;
+    public UsuarioRequest(String nombre, String email, String contrasenya) {
+        this.nombre = nombre;
         this.email = email;
         this.contrasenya = contrasenya;
     }
 
-    public String getNom() {
-        return nom;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setNombre(String nom) {
+        this.nombre = nom;
     }
 
     public String getContrasenya() {
@@ -37,7 +37,4 @@ public class UsuarioRequest {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    
-    
 }

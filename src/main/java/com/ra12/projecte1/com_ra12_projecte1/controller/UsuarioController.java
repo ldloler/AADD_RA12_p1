@@ -30,7 +30,7 @@ public class UsuarioController {
 
     @PostMapping("/usuario")
     public ResponseEntity<String> postUsers(@RequestBody UsuarioRequest usuario) {
-        UsuarioResponse finded = usuarioService.getByName(usuario.getNom());
+        UsuarioResponse finded = usuarioService.getByName(usuario.getNombre());
 
         if (finded != null) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Nom d'usuari ja en ús. Escull un altre.");
@@ -97,14 +97,14 @@ public class UsuarioController {
     public ResponseEntity<String> deleteUser(@RequestBody UsuarioRequest usuario){
         UsuarioResponse finded = usuarioService.getByUser(usuario);
         if (finded == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No s'ha trobat l'usuari " + usuario.getNom());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No s'ha trobat l'usuari " + usuario.getNombre());
         }
 
         int deleted = usuarioService.delete(usuario);
         if (deleted == 0) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("No s'ha pogut eliminar l'usuari " + usuario.getNom());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("No s'ha pogut eliminar l'usuari " + usuario.getNombre());
         }
 
-        return ResponseEntity.status(HttpStatus.OK).body("S'ha esborrat l'usuari " + usuario.getNom() + " correctament.");
+        return ResponseEntity.status(HttpStatus.OK).body("S'ha esborrat l'usuari " + usuario.getNombre() + " correctament.");
     }
 }
