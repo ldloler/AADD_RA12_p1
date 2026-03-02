@@ -23,7 +23,7 @@ public class UsuarioRepository {
         public UsuarioResponse mapRow(ResultSet rs, int rowNum) throws SQLException {
             UsuarioResponse usuario = new UsuarioResponse();
             usuario.setId(rs.getLong("id"));
-            usuario.setNom(rs.getString("nombre"));
+            usuario.setNombre(rs.getString("nombre"));
             usuario.setEmail(rs.getString("email"));
             usuario.setContrasenya(rs.getString("contrasenya"));
             return usuario;
