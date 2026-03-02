@@ -49,17 +49,17 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.OK).body(finded);
     }
 
-    @GetMapping("/usuario/{id}")
+    @GetMapping("/usuario/id/{id}")
     public ResponseEntity<UsuarioResponse> getUserById(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(usuarioService.getById(id));
     }
 
-    @GetMapping("/usuario/{nombre}")
+    @GetMapping("/usuario/nombre/{nombre}")
     public ResponseEntity<UsuarioResponse> getUserByName(@RequestParam String nombre) {
         return ResponseEntity.status(HttpStatus.OK).body(usuarioService.getByName(nombre));
     }
     
-    @PutMapping("/usuario/{nombre_nuevo}/{nombre_viejo}")
+    @PutMapping("/usuario/canvio_nombre/{nombre_nuevo}/{nombre_viejo}")
     public ResponseEntity<String> putUserName(@PathVariable String nombre_nuevo, @PathVariable String nombre_viejo) {
         UsuarioResponse finded = usuarioService.getByName(nombre_viejo);
         if (finded == null) {
@@ -79,7 +79,7 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.OK).body("S'ha cambiat l'usuari amb èxit.");
     }
     
-    @PutMapping("/usuario/{nombre}/{contrasenya}")
+    @PutMapping("/usuario/canvio_contrasenya/{nombre}/{contrasenya}")
     public ResponseEntity<String> putUserPasword(@PathVariable String nombre, @PathVariable String contrasenya) {
         UsuarioResponse finded = usuarioService.getByName(nombre);
         if (finded == null) {
