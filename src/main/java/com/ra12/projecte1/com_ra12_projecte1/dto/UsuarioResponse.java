@@ -2,16 +2,16 @@ package com.ra12.projecte1.com_ra12_projecte1.dto;
 
 public class UsuarioResponse {
     private Long id;
-    private String nom;
+    private String nombre;
     private String email; 
     private String contrasenya;
     
     public UsuarioResponse() {
     }
 
-    public UsuarioResponse(Long id, String nom, String email, String contrasenya) {
+    public UsuarioResponse(Long id, String nombre, String email, String contrasenya) {
         this.id = id;
-        this.nom = nom;
+        this.nombre = nombre;
         this.email = email;
         this.contrasenya = contrasenya;
     }
@@ -24,12 +24,12 @@ public class UsuarioResponse {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getContrasenya() {
