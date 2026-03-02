@@ -55,7 +55,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/usuario/nombre/{nombre}")
-    public ResponseEntity<UsuarioResponse> getUserByName(@RequestParam String nombre) {
+    public ResponseEntity<UsuarioResponse> getUserByName(@PathVariable String nombre) {
         return ResponseEntity.status(HttpStatus.OK).body(usuarioService.getByName(nombre));
     }
     
