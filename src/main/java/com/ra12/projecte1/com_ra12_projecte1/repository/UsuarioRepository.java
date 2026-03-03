@@ -60,6 +60,11 @@ public class UsuarioRepository {
         return jdbcTemplate.update(sql, contrasenya, nombre);
     }
 
+    public int deleteById(Long id){
+        String sql = "DELETE FROM usuario WHERE id = ?";
+        return jdbcTemplate.update(sql, id);
+    }
+
     public int deleteUser(UsuarioRequest usuario){
         String sql = "DELETE FROM usuario WHERE nombre = ? AND contrasenya = ?";
         return jdbcTemplate.update(sql, usuario.getNombre(), usuario.getContrasenya());
