@@ -93,7 +93,7 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/usuario/id/{id}")
-    public ResponseEntity<String> deleteUserById(Long id){
+    public ResponseEntity<String> deleteUserById(@PathVariable Long id){
         UsuarioResponse finded = usuarioService.getById(id);
         if (finded == null) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("No s'ha trobat l'usuari");
