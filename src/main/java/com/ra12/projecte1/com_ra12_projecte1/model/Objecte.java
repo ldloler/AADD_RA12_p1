@@ -8,7 +8,7 @@ public class Objecte {
     private String image_path;
     private String user;
     private String descripcion;
-    private String aCanvi;
+    private String acanvi;
     private boolean isFav;
     private Timestamp dataCreated;
     private Timestamp dataUpdated;
@@ -26,7 +26,7 @@ public class Objecte {
         this.image_path = image_path;
         this.user = user;
         this.descripcion = description;
-        this.aCanvi = aCanvi;
+        this.acanvi = aCanvi;
         this.isFav = isFav;
         this.dataCreated = dataCreated;
         this.dataUpdated = dataUpdated;
@@ -74,12 +74,12 @@ public class Objecte {
         this.isFav = isFav;
     }
 
-    public String getaCanvi() {
-        return aCanvi;
+    public String getAcanvi() {
+        return acanvi;
     }
 
-    public void setaCanvi(String aCanvi) {
-        this.aCanvi = aCanvi;
+    public void setAcanvi(String aCanvi) {
+        this.acanvi = aCanvi;
     }
 
 

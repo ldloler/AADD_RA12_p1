@@ -1,0 +1,45 @@
+[2026-03-03: 17:17:10] INFO - ObjectService - createObjecte - S'ha guardat l'objecte Cadira correctament.
+[2026-03-03: 17:17:38] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:23:02] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:24:53] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:28:18] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:28:21] INFO - ObjectService - getObjectByUser - S'han trobat els objectes de l'usuari.
+[2026-03-03: 17:28:22] INFO - ObjectService - getObjectByID - S'ha consultat l'objecte correctament.
+[2026-03-03: 17:30:40] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:30:41] INFO - ObjectService - createObjecte - S'ha guardat l'objecte Cadira correctament.
+[2026-03-03: 17:30:43] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:31:08] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:31:13] INFO - ObjectService - getObjectByUser - S'han trobat els objectes de l'usuari.
+[2026-03-03: 17:31:14] INFO - ObjectService - getObjectByID - S'ha consultat l'objecte correctament.
+[2026-03-03: 17:31:30] INFO - ObjectService - updatingObjecte - S'ha actualitzat l'objecte correctament.
+[2026-03-03: 17:31:32] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:31:36] INFO - ObjectService - getObjectByUser - S'han trobat els objectes de l'usuari.
+[2026-03-03: 17:31:37] INFO - ObjectService - getObjectByID - S'ha consultat l'objecte correctament.
+[2026-03-03: 17:31:55] INFO - ObjectService - getObjectByID - S'ha consultat l'objecte correctament.
+[2026-03-03: 17:36:19] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:36:22] INFO - ObjectService - createObjecte - S'ha guardat l'objecte Cadira correctament.
+[2026-03-03: 17:36:24] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:43:00] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:43:02] INFO - ObjectService - createObjecte - S'ha guardat l'objecte Cadira correctament.
+[2026-03-03: 17:43:04] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:44:07] INFO - ObjectService - createObjecte - S'ha guardat l'objecte Cadira correctament.
+[2026-03-03: 17:44:08] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:44:43] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:44:46] INFO - ObjectService - getObjectByUser - S'han trobat els objectes de l'usuari.
+[2026-03-03: 17:44:47] INFO - ObjectService - getObjectByID - S'ha consultat l'objecte correctament.
+[2026-03-03: 17:45:02] INFO - ObjectService - updatingObjecte - S'ha actualitzat l'objecte correctament.
+[2026-03-03: 17:45:03] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:45:05] INFO - ObjectService - getObjectByUser - S'han trobat els objectes de l'usuari.
+[2026-03-03: 17:45:06] INFO - ObjectService - getObjectByID - S'ha consultat l'objecte correctament.
+[2026-03-03: 17:46:48] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:46:50] INFO - ObjectService - getObjectByUser - S'han trobat els objectes de l'usuari.
+[2026-03-03: 17:46:52] INFO - ObjectService - getObjectByID - S'ha consultat l'objecte correctament.
+[2026-03-03: 17:51:35] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:51:41] INFO - ObjectService - createObjecte - S'ha guardat l'objecte Cadira correctament.
+[2026-03-03: 17:51:43] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:51:49] INFO - ObjectService - getObjectByUser - S'han trobat els objectes de l'usuari.
+[2026-03-03: 17:51:51] INFO - ObjectService - getObjectByID - S'ha consultat l'objecte correctament.
+[2026-03-03: 17:52:35] INFO - ObjectService - updatingObjecte - S'ha actualitzat l'objecte correctament.
+[2026-03-03: 17:52:38] INFO - ObjectService - getAllObjectes - S'han consultat tots els Objectes
+[2026-03-03: 17:52:41] INFO - ObjectService - getObjectByUser - S'han trobat els objectes de l'usuari.
+[2026-03-03: 17:52:42] INFO - ObjectService - getObjectByID - S'ha consultat l'objecte correctament.
