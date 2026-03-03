@@ -46,6 +46,10 @@ public class UsuarioService {
         return usuarioRepository.changePassword(nombre, contrasenya);
     }
 
+    public int deletingById(Long id){
+        return usuarioRepository.deleteById(id);
+    }
+
     public int delete(UsuarioRequest usuario){
         return usuarioRepository.deleteUser(usuario);
     }

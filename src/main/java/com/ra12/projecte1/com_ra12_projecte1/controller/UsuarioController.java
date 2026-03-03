@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -91,6 +90,20 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("No s'ha pogut actualitzar la contrasenya de l'usuari.");
         }
         return ResponseEntity.status(HttpStatus.OK).body("Sha actualitzat correctament la contrasenya de l'usuari.");
+    }
+
+    @DeleteMapping("/usuario/id/{id}")
+    public ResponseEntity<String> deleteUserById(Long id){
+        UsuarioResponse finded = usuarioService.getById(id);
+        if (finded == null) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("No s'ha trobat l'usuari");
+        }
+
+        int deleted = usuarioService.deletingById(id);
+        if (deleted == 0) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("No s'ha pogut eliminar l'usuari");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body("S'ha pogut eliminar correctament l'usuari");
     }
 
     @DeleteMapping("/usuario")
