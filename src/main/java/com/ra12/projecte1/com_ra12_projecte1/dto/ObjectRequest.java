@@ -4,7 +4,7 @@ public class ObjectRequest {
     private String titulo;
     private String user;
     private String description;
-    private String aCanvi;
+    private String acanvi;
     private boolean isFav;
     
     public ObjectRequest() {
@@ -15,7 +15,7 @@ public class ObjectRequest {
         this.titulo = titulo;
         this.user = user;
         this.description = description;
-        this.aCanvi = aCanvi;
+        this.acanvi = aCanvi;
         this.isFav = isFav;
     }
 
@@ -43,12 +43,12 @@ public class ObjectRequest {
         this.description = description;
     }
 
-    public String getaCanvi() {
-        return aCanvi;
+    public String getAcanvi() {
+        return acanvi;
     }
 
-    public void setaCanvi(String aCanvi) {
-        this.aCanvi = aCanvi;
+    public void setAcanvi(String aCanvi) {
+        this.acanvi = aCanvi;
     }
 
     public boolean isFav() {
